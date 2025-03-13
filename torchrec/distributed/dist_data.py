@@ -680,7 +680,7 @@ class KJTOneToAll(nn.Module):
             self._device_type: str = (
                 device.type
                 if device is not None and device.type in {"meta", "cuda", "mtia"}
-                else "cuda"
+                else device.type
             )
         assert self._world_size == len(splits)
 

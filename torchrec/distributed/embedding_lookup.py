@@ -1041,7 +1041,7 @@ class InferGroupedPooledEmbeddingsLookup(
             )  # TODO: replace hardcoded cpu with DEFAULT_DEVICE_TYPE in torchrec.distributed.types when torch package issue resolved
         else:
             device_type = (
-                "meta" if device is not None and device.type == "meta" else "cuda"
+                "meta" if device is not None and device.type == "meta" else device.type
             )
 
         self._is_empty_rank: List[bool] = []
